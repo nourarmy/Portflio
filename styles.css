@@ -30,11 +30,9 @@
   --font-regular: 400;/* Normal or Regular*/
   --font-medium: 500;/*Medium*/
   --font-semi-bold: 600;/*Semi-Bold */
-
-  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
-}
+
 
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1152px) {
@@ -92,12 +90,13 @@ img,
 svg {
   max-width: 100%;
   height: auto;
+ 
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+  max-width: 1300px;
+  margin-inline: 2.5rem;
 }
 
 .grid {
@@ -110,23 +109,23 @@ svg {
 }
 
 .section--title, 
-.section__subtitle {
+.section--subtitle {
   text-align: center;
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
 
-.section__title {
+.section--title {
   font-size: var(--h1-font-size);
   margin-bottom: 1.5rem;
 }
 
-.section__subtitle {
+.section--subtitle {
   font-size: var(--small-font-size);
   margin-bottom: 0.25rem;
 }
 
-.section__subtitle span {
+.section--subtitle span {
   color: var(--first-color);
 }
 
@@ -163,10 +162,10 @@ svg {
 
 .nav--toggle,
 .nav--close {
-  display: flex; /* Added colon here */
+  display: flex; 
   font-size: 1.25rem;
   color: var(--title-color);
-  cursor: pointer; /* Added colon here */
+  cursor: pointer; 
 }
 
 /* Navigation for mobile devices */
@@ -174,27 +173,26 @@ svg {
   .nav--menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    background: hsla(0, 0%, 10%, 0.3);
+    right:-100%;
+    background-color: hsla(0, 0%, 10%,0.3);
     width: 75%;
     height: 100%;
     padding: 4.5rem 0 0 3rem;
     backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    transition: right 0.4s; /* Added a colon here */
+    transition: right 0.4s; 
   }
 }
 
 .nav--list {
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 4rem;
 }
 
 .nav--link {
   color: var(--title-color);
-  font-weight: var(--font-medium);
-  transition: color 0.4s; /* Added a colon here */
+  font-weight: bold;
+  transition: color 0.4s; 
 }
 .nav--link:hover{
   color: var(--first-color);
@@ -210,10 +208,10 @@ svg {
 }
 
 
-/* Add blur to header */
 
 
-/* Active link */
+
+
 
 
 /*=============== HOME ===============*/
@@ -231,6 +229,7 @@ svg {
 }
 .home--data{
   text-align: center;
+  font-size: var(--h3-font-size);
 }
 .home--subtitle,.home--education{
   font-size: var(--bigger-font-size);
@@ -300,6 +299,7 @@ filter: drop-shadow(0 12px 12px hsla(var(--hue),100%,50%, 0.2));
 }
 .about--data{
   justify-content: center;
+  font-size: var(--h3-font-size);
 }
 .about--description{
   margin-bottom:2.5rem ;
@@ -313,7 +313,11 @@ filter: drop-shadow(0 12px 12px hsla(var(--hue),100%,50%, 0.2));
 .about--blob path{
   stroke: var(--first-color) ;
 }
-
+.about-img{
+  width: 700px;
+  height: 1000px;
+  transform: translateX(-20px)
+}
 
 /*=============== SKILLS ===============*/
 .skills{
@@ -323,14 +327,14 @@ filter: drop-shadow(0 12px 12px hsla(var(--hue),100%,50%, 0.2));
   padding-bottom: 2rem;
   row-gap: 3.5rem;
 }
-skills--data{
+.skills--data{
   text-align: center;
+  font-size: var(--h3-font-size);
 }
 .skills--description{
   margin-bottom: 2rem;
-  text-align: center;
   
-  
+ 
 }
 .skills--content,.skills--group{
   display: grid;
@@ -377,14 +381,13 @@ skills--data{
   color: var(--first-color);
   margin-bottom: 0.75rem;
   }
-  .services--title{
-    font-size: var(--h2-font-size);
-    margin-bottom: 1.5rem;
-  }
-  .services--card:hover{
-    border:2px solid var(--first-color);
-
-  }
+.services--title{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.5rem;
+}
+.services--card:hover{
+  border:2px solid var(--first-color);
+}
 
 
 
@@ -414,7 +417,6 @@ skills--data{
   height: 100%;
   background: linear-gradient(180deg,hsla(0, 0%, 0%,0)0%,hsla(var(--hue), 70%, 40%, 0.8)120%);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -457,7 +459,7 @@ skills--data{
 }
 .contact--form,.contact--group{
   display: grid;
-  row-gap: 1rem
+  row-gap: 1rem;
 }
 .contact--input{
  padding:1rem 1.25rem;
@@ -531,13 +533,7 @@ skills--data{
   margin-top: 2rem;
 }
 
-/*=============== SCROLL BAR ===============*/
 
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up */
 
 
 /*=============== BREAKPOINTS ===============*/
@@ -589,7 +585,7 @@ skills--data{
     order:1;
   }
   .services--container,.projects--container{
-    grid-template-columns: repeat(2,352p);
+    grid-template-columns: repeat(2,352px);
   }
   .nav{
     height: calc(var(--header-height)+1.5rem);
@@ -624,7 +620,7 @@ skills--data{
   }
   .home--container{
     grid-template-columns: 455px 550px;
-    column-gap: rem;
+    column-gap: 7rem;
     padding-block: 2rem 3rem;
   }
   .home--blob{
@@ -653,18 +649,21 @@ skills--data{
   .skills--container{
     grid-template-columns:340px 425px;
     column-gap: 10rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
   .skills--description{
     margin-bottom: 3rem;
+
   }
   .skills--content{
     column-gap: 8rem;
+   
   }
+ 
   .skills--group{
     row-gap: 1.5rem;
   }
-  .skills--item{
+  .skills-item{
     font-size: var(--h3-font-size);
   }
   .services--container{
@@ -676,7 +675,7 @@ skills--data{
   }
   .projects--container{
     grid-template-columns: repeat(3,350px);
-    row-gap: 3rem;
+    gap: 3rem;
     padding-block: 2.5rem 4rem;
   }
   .projects--button{
@@ -703,9 +702,10 @@ skills--data{
     padding-block: 4.5rem 4rem;
   }
   .footer--container{
-    grid-template-columns: repeat(3,1fe);
+    grid-template-columns: repeat(2,550px);
     align-items: center;
     text-align: initial;
+    
 
   }
   .footer--title{
@@ -715,13 +715,11 @@ skills--data{
     column-gap: 1.5rem;
   }
   .footer--copy{
-    margin: 0;
+    margin: 18rem;
     justify-self: flex-end;
   }
 
-
- 
+}
 
 
 }
-  
